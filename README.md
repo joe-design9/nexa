@@ -1,5 +1,7 @@
 # Nexa
 
+**Website & Download:** https://nexa-download.pages.dev
+
 Nexa is an invite-only chat & community platform for Windows — servers, text channels, DMs, voice channels, a 27-badge system and a guided first-run tour. Registration is only possible with a platform invite code.
 
 ## Download for Windows
