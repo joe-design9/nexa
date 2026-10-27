@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "@nexa/shared": "*",
+    "livekit-client": "^2.9.0",
+    "next": "^15.1.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "socket.io-client": "^4.8.1",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  },
+  "name": "@nexa/web",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev -p 3000",
+    "lint": "next lint || true",
+    "start": "next start -p 3000",
+    "test": "jest"
+  },
+  "version": "1.0.0"
+}

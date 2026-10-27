@@ -1,0 +1,14 @@
+node_modules
+dist
+.next
+.env
+*.log
+coverage
+uploads
+.DS_Store
+.env.*
+!.env.example
+release/
+release-admin/
+*.muse-github-snapshot-sync.json
+*.muse-github-snapshot-sync.json.tmp-*

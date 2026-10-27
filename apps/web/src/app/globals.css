@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html.light { color-scheme: light; }
+
+html, body {
+  height: 100%;
+  background: #0B0B12;
+  color: #E7E7F0;
+}
+html.light body { background: #F4F4FA; color: #171724; }
+
+::selection { background: rgba(124, 92, 255, .45); }
+
+/* Scrollbars */
+* { scrollbar-width: thin; scrollbar-color: #262638 transparent; }
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: #262638; border-radius: 8px; }
+
+/* Intro-Splash */
+.nexa-draw { stroke-dasharray: 640; stroke-dashoffset: 640; animation: nexaDraw 1.25s ease forwards .1s; }
+@keyframes nexaDraw { to { stroke-dashoffset: 0; } }
+.nexa-letter { opacity: 0; transform: translateY(10px); animation: nexaRise .45s ease forwards; display: inline-block; }
+@keyframes nexaRise { to { opacity: 1; transform: none; } }
+.nexa-tagline { opacity: 0; animation: nexaRise .5s ease forwards 1.15s; }
+.nexa-glow { filter: drop-shadow(0 0 26px rgba(124, 92, 255, .6)); }
+
+/* Markdown-Content aus @nexa/shared (XSS-sicher gerendert) */
+.nexa-md { overflow-wrap: anywhere; line-height: 1.45; }
+.nexa-md p { margin: 0; }
+.nexa-md a { color: #22D3EE; text-decoration: none; }
+.nexa-md a:hover { text-decoration: underline; }
+.nexa-md code { background: #0B0B12; border: 1px solid #262638; border-radius: 5px; padding: 1px 5px; font-size: .85em; font-family: ui-monospace, monospace; }
+.nexa-md pre { background: #0B0B12; border: 1px solid #262638; border-radius: 8px; padding: 10px 12px; overflow-x: auto; margin: 6px 0; }
+.nexa-md pre code { background: transparent; border: 0; padding: 0; }
+.nexa-md blockquote { border-left: 3px solid #7C5CFF; padding-left: 10px; color: #9A9AB0; margin: 4px 0; }
+.nexa-md ul, .nexa-md ol { margin: 4px 0 4px 18px; }
+.nexa-md ul { list-style: disc; }
+.nexa-md ol { list-style: decimal; }
+.nexa-md .spoiler, .spoiler { background: #000; color: transparent; border-radius: 4px; cursor: pointer; padding: 0 3px; }
+.nexa-md .spoiler *, .spoiler * { visibility: hidden; }
+.nexa-md .spoiler.revealed, .spoiler.revealed { background: rgba(124,92,255,.25); color: inherit; }
+.nexa-md .spoiler.revealed *, .spoiler.revealed * { visibility: visible; }
+.mention-chip { background: rgba(124,92,255,.28); color: #C9BFFF; border-radius: 4px; padding: 0 4px; font-weight: 600; }
+
+/* Kompakt-Modus */
+.compact .msg-row { padding-top: 2px !important; padding-bottom: 2px !important; }
+.compact .msg-group-gap { margin-top: 4px !important; }
+
+input[type='date']::-webkit-calendar-picker-indicator { filter: invert(.7); }

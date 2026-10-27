@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Nexa</title>
+<style>
+  html, body { margin:0; height:100%; background:transparent; overflow:hidden; font-family: Inter, system-ui, sans-serif; }
+  .wrap { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; }
+  .logo { filter: drop-shadow(0 0 26px rgba(124,92,255,.65)); animation: pulse 1.8s ease-in-out infinite; }
+  .npath { stroke-dasharray: 640; stroke-dashoffset: 640; animation: draw 1.3s ease forwards .1s; }
+  .word { color:#E7E7F0; font-size:34px; font-weight:800; letter-spacing:.35em; text-indent:.35em; display:flex; }
+  .word span { opacity:0; transform: translateY(10px); animation: rise .45s ease forwards; }
+  .word span:nth-child(1){animation-delay:.55s}.word span:nth-child(2){animation-delay:.68s}
+  .word span:nth-child(3){animation-delay:.81s}.word span:nth-child(4){animation-delay:.94s}
+  .tag { color:#9A9AB0; font-size:13px; opacity:0; animation: rise .5s ease forwards 1.15s; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes rise { to { opacity:1; transform:none; } }
+  @keyframes pulse { 0%,100% { transform: scale(1);} 50% { transform: scale(1.045);} }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <svg class="logo" width="150" height="150" viewBox="0 0 512 512">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#7C5CFF"/><stop offset="1" stop-color="#22D3EE"/>
+        </linearGradient>
+      </defs>
+      <rect x="16" y="16" width="480" height="480" rx="112" fill="#0B0B12"/>
+      <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="url(#g)" stroke-width="10"/>
+      <path class="npath" d="M150 362 V150 L362 362 V150" fill="none" stroke="url(#g)" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="word"><span>N</span><span>E</span><span>X</span><span>A</span></div>
+    <div class="tag" id="tag">Deine Community. Deine Regeln.</div>
+  </div>
+<script>
+  // Splash folgt der Systemsprache (die Web-UI hat ihre eigene, dort umschaltbare Sprache).
+  if (!navigator.language || !navigator.language.toLowerCase().startsWith('de')) {
+    document.documentElement.lang = 'en';
+    document.getElementById('tag').textContent = 'Your community. Your rules.';
+  }
+</script>
+</body>
+</html>

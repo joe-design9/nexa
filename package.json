@@ -1,0 +1,27 @@
+{
+  "description": "Nexa – Chat- und Community-Plattform (eigenständige Eigenentwicklung)",
+  "engines": {
+    "node": ">=20"
+  },
+  "name": "nexa",
+  "private": true,
+  "scripts": {
+    "build": "npm run build -w @nexa/shared && npm run build -w @nexa/api && npm run build -w @nexa/web",
+    "build:api": "npm run build -w @nexa/api",
+    "build:shared": "npm run build -w @nexa/shared",
+    "build:web": "npm run build -w @nexa/web",
+    "db:generate": "npm run db:generate -w @nexa/api",
+    "db:migrate": "npm run db:migrate -w @nexa/api",
+    "db:seed": "npm run db:seed -w @nexa/api",
+    "dev": "npm run dev -w @nexa/api & npm run dev -w @nexa/web",
+    "docker:down": "docker compose down",
+    "docker:up": "docker compose up -d --build",
+    "lint": "npm run lint -w @nexa/api && npm run lint -w @nexa/web",
+    "test": "npm run test -w @nexa/shared && npm run test -w @nexa/api && npm run test -w @nexa/web"
+  },
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
